@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>11</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../serverspace/html/files/temp_css.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="banner" onclick="disabled()">
+    <div class="inside_banner">
+      <p style="text-align: center;">Привет!</p>
+      <p style="text-align: center;" id="banner_target"></p>
+    </div>
+    <div class="htd_banner">
+      <p style="text-align: center;font-size: 30px;">Как это сделано?</p>
+      <p id="htd1" class="htd_text">При нажатии кнопки "Отправить" текст из поля ввода берется функцией hello() и формируется в строку вида "Привет, name!" значение которой присваивается пустому параграфу, который после этого становиться видимым.</p>
+      <p id="htd2" class="htd_text">Аналогично первому примеру, по нажатию кнопки значения передаются  в функцию, где происходит вычисление по формуле и результат записывается в пустой параграф.</p>
+      <p id="htd3" class="htd_text">При получении строк, происходит сравнивание по длине(.length)-параметру, который есть у каждой строки.</p>
+      <p id="htd4" class="htd_text">При получении массива,его первый элемент заносится как максимальный и минимальный одновременно, обходя массив с помощью for (var i = arr.length - 1; i >= 0; i--) мы сравниваем каждый элемент с минимумом и максимумом, заменяя в случае нового максимума/минимума.</p>
+      <p id="htd5" class="htd_text">Данный таймер построен на использовании функции setInterval(() => {sec++;updateTimer()}, 1000); которая вызывается при нажатии кнопки Старт.Первым параметром setInterval является другая функция(конкретно здесь, увеличение колличества пройденных секунд каждую секунду и обновление таймера на странице) а вторым параметров является время,через которой функция вызывается снова(так как время указывается в миллисекундах, здесь указано значеник в 1000 мс что равно одной секунде).setInterval будет бесконечно вызывать функцию через указанный промежуток, пока его не остановят извне.Кнопка Стоп немедленно останавливает дальнейший вызов благодаря функции clearInterval(timerId); где timerId это та setInterval, которая была вначале запущена. Кнопка сброс работает аналогичным образом, только в этом случае данные и прошедшем времени стираются и таймер обновляется с нулевым временем.</p>
+      <p id="htd6" class="htd_text">Тест построен на вопросах, каждый из которых представляет из себя div блок с именнованым input внутри.Внутри каждого блока есть несколько input, которые связаны между собой тегом name и radio. Первый тег обьединяет несколько обьектов в группу, второй указывает, что выбрать можно лишь один из них. Проверка теста основана на том, что на момент выполнения сценария внутри уже есть массив, в котором последовательно хранятся номера правильных ответов. Один за другим, вызываются input и если он был выбран(то есть его атрибут checked равен true)то он помечается как правильно выбранный(подсвечивается зеленым) и увеличивается счетчик правильных ответов. Иначе же правильный input подсвечивается красным и счетчик не увеличивается. </p>
+      <p id="htd7" class="htd_text">Баннер, который всплывает при нажатии кнопки, изначально невидим(display:none). После того как кнопка была нажата display меняется на flex, и с помощью свойства position:fixed фиксируется, благодаря чему он не сьезжает при прокрутке страницы. Дата формируется из обьекта new Date() но, так как он содержит много лишней информации, здесь были использованы методы getDate() getMonth() getFullYear() c помощью который и была составлена нужная дата. Она была присоединена к строке вместе с именем, которое берется из параграфа из примера 1.</p>
+    </div>
+  </div>
+ <div>
+   <p class="head_what">What</p>
+   <p class="head_is">Is</p>
+   <p class="head_js">JS?</p>
+ </div>
+ <div class="main_text">
+  <p class="mt_t"><span style="font-size: 30px;">JavaScript</span> - это язык программирования, активно использующийся в современной WEB-разработке.Основной его задачей является добавление интерактивности веб-страницам.Он используется как во frontend, так и в backend разработке. С его помощью на сайт можно добавить анимации,автозаполнение, всплывающие формы-в общем контент, который меняется "на лету". Однако, JavaScript сам по себе не может создать сайт или стилизовать что-либо - это работа для HTML и CSS. Тем не менее  его спектр задач огромен, и он позволяет реализовывать различные полезные функции, <i>например...</i></p>
+</div>
+<p class="p_ex">Примеры использования JavaScript</p>
+<div class="menu">
+<ul id="nav_ex">
+  <li><a href="#e1">Пример 1.Как тебя зовут?</a></li>
+  <li><a href="#e2">Пример 2.Геометрия!</a></li>
+  <li><a href="#e3">Пример 3.Кто длиннее?</a></li>
+  <li><a href="#e4">Пример 4.Кто-то больше, кто-то меньше</a></li>
+  <li><a href="#e5">Пример 5.Таймер</a></li>
+  <li><a href="#e6">Пример 6.Время теста!</a></li>
+  <li><a href="#e7">Пример 7.Сюрприз!</a></li>
+</ul>
+</div>
+<div class="ex"><a name="e1"></a>
+  <p class="p_ex">Пример 1.Как тебя зовут?</p>
+  <div class="ex_content">
+    <p>JavaScript позволяет работать с полученной от пользователя информацией.Например:</p>
+    <div class="ex_inside">
+    <p>Ваше имя:
+     <input type="text" id="inp_name" size="40">
+     <input class="input_button" type="submit" onclick="hello()" value="Отправить">
+    </p>
+    </div>
+    <p class="hello_p"></p>
+    <button class="button" onclick="showHTDBanner(1)">Как это сделано?</button>
+  </div>
+</div>
+
+<div class="ex"><a name="e2"></a>
+  <p class="p_ex">Пример 2.Геометрия!</p>
+  <div class="ex_content">
+    <p>Также, JavaScript позволяет вычислять какие-либо нужные нам значения.Допустим, есть треугольник, у которого известная высота и основание, но нужно найти площадь:</p>
+    <p>Высота:
+     <input type="number" id="inp_h" size="40">
+    <div class="ex_inside">
+    <p>Основание:
+     <input type="number" id="inp_b" size="40">
+     <input class="input_button" type="submit" onclick="calcTriangle()" value="Вычислить">
+    </p>
+    </div>
+    <p class="triangle_s"></p>
+    <button class="button" onclick="showHTDBanner(2)">Как это сделано?</button>
+  </div>
+</div>
+
+<div class="ex"><a name="e3"></a>
+  <p class="p_ex">Пример 3.Кто длиннее?</p>
+  <div class="ex_content">
+    <p>Работа со строками-важная часть JavaScript.Возможно не только манипулировать с их содержимым, но и даже сравнивать их между собой:</p>
+    <p>Строка №1:
+     <input type="text" id="inp_s1" size="40">
+    <div class="ex_inside">
+    <p>Строка №2:
+     <input type="text" id="inp_s2" size="40">
+     <input class="input_button" type="submit" onclick="compareString()" value="Сравнить">
+    </p>
+    </div>
+    <p class="hello_p" id="string_res"></p>
+    <button class="button" onclick="showHTDBanner(3)">Как это сделано?</button>
+  </div>
+</div>
+
+<div class="ex"><a name="e4"></a>
+  <p class="p_ex">Пример 4.Кто-то больше, кто-то меньше</p>
+  <div class="ex_content">
+    <p>Работа со массивами-последовательностью элементов-не менее важная часть JavaScript.В массиве можно,например,найти максимальное и минимальное значения.Введите числа массива через пробел:</p>
+    <div class="ex_inside">
+    <p>Массив:
+     <input type="text" id="inp_arr" size="40">
+     <input class="input_button" type="submit" onclick="arrMaxAndMin()" value="Вычислить">
+    </p>
+    </div>
+    <p class="hello_p" id="arr_res"></p>
+    <button class="button" onclick="showHTDBanner(4)">Как это сделано?</button>
+  </div>
+</div>
+
+<div class="ex"><a name="e5"></a>
+  <p class="p_ex">Пример 5.Таймер</p>
+  <div class="ex_content">
+    <p>Всегда полезно знать, сколько прошло времени. Данный таймер реализован именно с помощью JavaScript:</p>
+    <div class="timer_text">
+    <p id="hours">0</p>
+    <p>:</p>
+    <p id="min">0</p>
+    <p>:</p>
+    <p id="sec">0</p>
+    </div>
+    <div class="timer_buttons">
+      <input class="input_button" type="submit" onclick="startTimer()" value="Старт">
+      <input class="input_button" type="submit" onclick="stopTimer()" value="Стоп">
+      <input class="input_button" type="submit" onclick="resetTimer()" value="Сброс">
+    </div>
+    <button class="button" onclick="showHTDBanner(5)">Как это сделано?</button>
+  </div>
+</div>
+
+<div class="ex"><a name="e6"></a>
+  <p class="p_ex">Пример 6.Время теста!</p>
+  <div class="ex_content">
+    <p>Помимо ввода информации, пользователю можно дать выбор из нескольких, предусмотренных заранее, вариантов. Это отличный инструмент для реализации тестов! Вот, кстати, один из них:</p>
+    <div class="quest"></div>
+    <p class="q_text">Вопрос 1:JavaScript - строго типизированный язык?</p>
+      <div class="q_buttons">
+        <div >
+        <input id="q1_1" name="q1" type="radio" onclick="">
+        <label for="q1_1" >Да</label>
+        </div>
+        <div>
+        <input id="q1_2" name="q1" type="radio" onclick="">
+        <label for="q1_2" id="q1_2_l">Нет</label>
+        </div>
+      </div>
+    <p class="q_text">Вопрос 2:Какая функция используется для всплывающего уведомления?</p>
+      <div class="q_buttons">
+        <div >
+        <input id="q2_1" name="q2" type="radio" onclick="">
+        <label for="q2_1" id="q2_1_l">alert()</label>
+        </div>
+        <div>
+        <input id="q2_2" name="q2" type="radio" onclick="">
+        <label for="q2_2" id="q2_2_l">console.log()</label>
+        </div>
+        <div>
+        <input id="q2_3" name="q2" type="radio" onclick="">
+        <label for="q2_3" id="q2_3_l">yvedomlenie()</label>
+        </div>
+      </div> 
+    <p class="q_text">Вопрос 3:Чем == отличается от ===?</p>
+      <div class="q_buttons">
+        <div >
+        <input id="q3_1" name="q3" type="radio" onclick="">
+        <label for="q3_1" id="q3_1_l">=== перепроверяет результат сравнения</label>
+        </div>
+        <div>
+        <input id="q3_2" name="q3" type="radio" onclick="">
+        <label for="q3_2" id="q3_2_l">Ничем.Это прикол такой</label>
+        </div>
+        <div>
+        <input id="q3_3" name="q3" type="radio" onclick="">
+        <label for="q3_3" id="q3_3_l">=== не приводит сравниваемые значения к одному типу</label>
+        </div>
+      </div>
+    <p class="q_text">Вопрос 4:  alert(4+4+"4"+8) Что будет выведено? </p>
+      <div class="q_buttons">
+        <div >
+        <input id="q4_1" name="q4" type="radio" onclick="">
+        <label for="q4_1" id="q4_1_l">Error!</label>
+        </div>
+        <div>
+        <input id="q4_2" name="q4" type="radio" onclick="">
+        <label for="q4_2" id="q4_2_l">848</label>
+        </div>
+        <div>
+        <input id="q4_3" name="q4" type="radio" onclick="">
+        <label for="q4_3" id="q4_3_l">92</label>
+        </div>
+      </div>
+    <p class="q_text">Вопрос 5:  alert("aaaa"/4) Что будет выведено? </p>
+      <div class="q_buttons">
+        <div >
+        <input id="q5_1" name="q5" type="radio" onclick="">
+        <label for="q5_1" id="q5_1_l">a</label>
+        </div>
+        <div>
+        <input id="q5_2" name="q5" type="radio" onclick="">
+        <label for="q5_2" id="q5_2_l">aaaa</label>
+        </div>
+        <div>
+        <input id="q5_3" name="q5" type="radio" onclick="">
+        <label for="q5_3" id="q5_3_l">NaN</label>
+        </div>
+      </div>
+     <p class="q_text">Вопрос 6:  Чем различаются Java и JavaScript? </p>
+      <div class="q_buttons">
+        <div >
+        <input id="q6_1" name="q6" type="radio" onclick="">
+        <label for="q6_1" id="q6_1_l">Многим</label>
+        </div>
+        <div>
+        <input id="q6_2" name="q6" type="radio" onclick="">
+        <label for="q6_2" id="q6_2_l">В Java нет скриптов</label>
+        </div>
+        <div>
+        <input id="q6_3" name="q6" type="radio" onclick="">
+        <label for="q6_3" id="q6_3_l">Да все эти языки одинаковые</label>
+        </div>
+      </div>  
+     <p class="q_text">Вопрос 7:  Чем различаются let и var? </p>
+      <div class="q_buttons">
+        <div >
+        <input id="q7_1" name="q7" type="radio" onclick="">
+        <label for="q7_1" id="q7_1_l">Откуда я знаю?Я только начал изучать JS!</label>
+        </div>
+        <div>
+        <input id="q7_2" name="q7" type="radio" onclick="">
+        <label for="q7_2" id="q7_2_l">Областью видимости</label>
+        </div>
+        <div>
+        <input id="q7_3" name="q7" type="radio" onclick="">
+        <label for="q7_3" id="q7_3_l">Тем,что в них можно положить</label>
+        </div>
+      </div>
+     <p class="q_text">Вопрос 8:  В чем разница между null и undefined? </p>
+      <div class="q_buttons">
+        <div >
+        <input id="q8_1" name="q8" type="radio" onclick="">
+        <label for="q8_1" id="q8_1_l">Они одинаковы</label>
+        </div>
+        <div>
+        <input id="q8_2" name="q8" type="radio" onclick="">
+        <label for="q8_2" id="q8_2_l">undefined-значение по умолчанию, null-"значение отсутствия значения"</label>
+        </div>
+        <div>
+        <input id="q8_3" name="q8" type="radio" onclick="">
+        <label for="q8_3" id="q8_3_l">По разному называются</label>
+        </div>
+      </div>
+    <p class="q_text">Вопрос 9:  let a;alert(a); Что будет выведено? </p>
+      <div class="q_buttons">
+        <div >
+        <input id="q9_1" name="q9" type="radio" onclick="">
+        <label for="q9_1" id="q9_1_l">undefined</label>
+        </div>
+        <div>
+        <input id="q9_2" name="q9" type="radio" onclick="">
+        <label for="q9_2" id="q9_2_l">null</label>
+        </div>
+        <div>
+        <input id="q9_3" name="q9" type="radio" onclick="">
+        <label for="q9_3" id="q9_3_l">0</label>
+        </div>
+      </div>    
+    <p class="q_text">Вопрос 10:  Какая функция округляет число до меньшего? </p>
+      <div class="q_buttons">
+        <div >
+        <input id="q10_1" name="q10" type="radio" onclick="">
+        <label for="q10_1" id="q10_1_l">Math.ceil()</label>
+        </div>
+        <div>
+        <input id="q10_2" name="q10" type="radio" onclick="">
+        <label for="q10_2" id="q10_2_l">Math.round()</label>
+        </div>
+        <div>
+        <input id="q10_3" name="q10" type="radio" onclick="">
+        <label for="q10_3" id="q10_3_l">Math.floor()</label>
+        </div>
+      </div>   
+      <input class="input_button" type="submit" onclick="checkTest()" value="Проверить">
+      <p id="test_res"></p>
+      <button class="button" onclick="showHTDBanner(6)">Как это сделано?</button>
+    </div>
+  </div>
+
+  <div class="ex"><a name="e7"></a>
+  <p class="p_ex">Пример 7.Сюрприз!</p>
+  <div class="ex_content">
+    <p>Обрабатывать полученную информацию, конечно, неплохо, но куда интереснее её доставлять! Есть множество способов это сделать, один из которых...</p>
+    
+    <div class="red_button"><button class="red_button" onclick="showBanner()">НАЖМИ НА МЕНЯ</button></div>
+    <button class="button" onclick="showHTDBanner(7)">Как это сделано?</button>
+  </div>
+</div>
+</div>
+
+ <!-- <button class="button">Как это сделано?</button>   style="background:#EEBABA;border-radius: 3px;"-->
+<script src="../serverspace/html/files/t.js"></script>
+</body>
+</html>
